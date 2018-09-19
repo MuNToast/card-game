@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 export default class CharacterCard extends Component {
-    render(){
+    render() {
         return (
             <div className="card">{this.props.value}</div>
-        )
+        ); 
     }
 }
