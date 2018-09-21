@@ -26,6 +26,13 @@
     font-size: 3em;
 
 }
+.accuracy{
+    text-align:  right;
+    margin-right: 1em;
+    margin-top: -2.5em;
+    font-size: 2em;
+    color: brown;
+}
 button:hover{
     background-color: rgb(216, 216, 216);
 }
