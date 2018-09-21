@@ -45,6 +45,8 @@ export default class WordCard extends Component {
                     )
                 }
                 <div className="text-inner">
+                    <p className="hint">{this.state.attempt === 3 ? "Hint 1: โรคบิดมีตัว" : ""}</p>
+                    <p className="hint">{this.state.attempt >= 5 ? "Hint 2: พบได้ในประเทศเขตร้อน" : ""}</p>
                     <p className="completed">{this.state.completed ? "EZ" : " "}</p>
                 </div>
             </div>

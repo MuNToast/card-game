@@ -8,3 +8,8 @@
     font-size: 2em;
     color: black;
 }
+.hint{
+    color: rgb(173, 170, 170);
+    font-size: 5em;
+    text-align: left;
+}
