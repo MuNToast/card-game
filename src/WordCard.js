@@ -38,15 +38,17 @@ export default class WordCard extends Component {
 
             <div className="App">
                 <p className="round">รอบที่ : {this.state.attempt}</p>
-                {
+
+                {this.state.attempt != 7 ?
                     Array.from(this.state.chars).map(
                         (c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
                             activationHandler={this.activationHandler} />
                     )
+                    : <p className="gameover">จบละ</p>
                 }
                 <div className="text-inner">
                     <p className="hint">{this.state.attempt === 3 ? "Hint 1: โรคบิดมีตัว" : ""}</p>
-                    <p className="hint">{this.state.attempt >= 5 ? "Hint 2: พบได้ในประเทศเขตร้อน" : ""}</p>
+                    <p className="hint">{this.state.attempt === 5 ? "Hint 2: พบได้ในประเทศเขตร้อน" : ""}</p>
                     <p className="completed">{this.state.completed ? "EZ" : " "}</p>
                 </div>
             </div>
