@@ -8,9 +8,10 @@ const prepareStateFromWord = (given_word) => {
     return {
         word,
         chars,
-        attempt: 1,
+        attempt: 5,
         guess: [],
-        completed: false
+        completed: false,
+        score: 100
     }
 }
 export default class WordCard extends Component {
@@ -27,21 +28,21 @@ export default class WordCard extends Component {
                 this.setState({ guess: [], completed: true })
             }
             else {
-                this.setState({ guess: [], attempt: this.state.attempt + 1 })
+                this.setState({ guess: [], attempt: this.state.attempt + 1 , score: this.state.score - 20})
             }
         }
     }
 
     reset = () => {
-        this.setState({attempt: 1})
+        this.setState({attempt: 1, score: 100})
     }
     render() {
         return (
 
             <div className="App">
                 <p className="round">รอบที่ : {this.state.attempt}</p>
-
-                {this.state.attempt != 7 ?
+                <p className="accuracy">ความแม่นยำ : {this.state.score}%</p>
+                {this.state.attempt != 6 ?
                     Array.from(this.state.chars).map(
                         (c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
                             activationHandler={this.activationHandler} />
@@ -50,8 +51,8 @@ export default class WordCard extends Component {
                     <button className="button" onClick={this.reset}>เล่นใหม่</button> </div> 
                 }
                 <div className="text-inner">
-                    <p className="hint">{this.state.attempt === 3 ? "Hint 1: Hello" : ""}</p>
-                    <p className="hint">{this.state.attempt === 5 ? "Hint 2: สวัสดี" : ""}</p>
+                    <p className="hint">{this.state.attempt === 2 ? "Hint 1: Hello" : ""}</p>
+                    <p className="hint">{this.state.attempt === 3 ? "Hint 2: สวัสดี" : ""}</p>
                     <p className="completed">{this.state.completed ? "EZ" : " "}</p>
                 </div>
             </div>
