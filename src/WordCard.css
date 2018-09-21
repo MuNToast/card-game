@@ -1,0 +1,10 @@
+.round{
+    text-align: left;
+    margin-left: 1em;
+    font-size: 2em;
+    color: brown;
+}
+.completed{
+    font-size: 2em;
+    color: black;
+}
