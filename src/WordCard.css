@@ -37,3 +37,11 @@ button:hover{
     background-color: rgb(216, 216, 216);
 }
 button:focus {outline:0;}
+
+.Winner{
+    text-align:  right;
+    margin-right: 1em;
+    margin-top: -2.5em;
+    font-size: 2em;
+    color: brown;
+}

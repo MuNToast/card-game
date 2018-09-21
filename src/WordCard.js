@@ -8,7 +8,7 @@ const prepareStateFromWord = (given_word) => {
     return {
         word,
         chars,
-        attempt: 5,
+        attempt: 1,
         guess: [],
         completed: false,
         score: 100
@@ -40,7 +40,7 @@ export default class WordCard extends Component {
         return (
 
             <div className="App">
-                <p className="round">รอบที่ : {this.state.attempt}</p>
+                <p className="round">รอบที่ : {this.state.attempt === 5 || this.state.attempt === 6 ?  'Final' : this.state.attempt}</p>
                 <p className="accuracy">ความแม่นยำ : {this.state.score}%</p>
                 {this.state.attempt != 6 ?
                     Array.from(this.state.chars).map(
@@ -53,7 +53,7 @@ export default class WordCard extends Component {
                 <div className="text-inner">
                     <p className="hint">{this.state.attempt === 2 ? "Hint 1: Hello" : ""}</p>
                     <p className="hint">{this.state.attempt === 3 ? "Hint 2: สวัสดี" : ""}</p>
-                    <p className="completed">{this.state.completed ? "EZ" : " "}</p>
+                    <p className="completed">{this.state.completed ? <p className="Winner">ชนะแล้ววววววว</p> : " "}</p>
                 </div>
             </div>
         )
