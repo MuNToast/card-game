@@ -32,7 +32,9 @@ export default class WordCard extends Component {
         }
     }
 
-
+    reset = () => {
+        this.setState({attempt: 1})
+    }
     render() {
         return (
 
@@ -44,11 +46,12 @@ export default class WordCard extends Component {
                         (c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
                             activationHandler={this.activationHandler} />
                     )
-                    : <p className="gameover">จบละ</p>
+                    : <div><p className="gameover">จบละ</p> 
+                    <button className="button" onClick={this.reset}>เล่นใหม่</button> </div> 
                 }
                 <div className="text-inner">
-                    <p className="hint">{this.state.attempt === 3 ? "Hint 1: โรคบิดมีตัว" : ""}</p>
-                    <p className="hint">{this.state.attempt === 5 ? "Hint 2: พบได้ในประเทศเขตร้อน" : ""}</p>
+                    <p className="hint">{this.state.attempt === 3 ? "Hint 1: Hello" : ""}</p>
+                    <p className="hint">{this.state.attempt === 5 ? "Hint 2: สวัสดี" : ""}</p>
                     <p className="completed">{this.state.completed ? "EZ" : " "}</p>
                 </div>
             </div>
